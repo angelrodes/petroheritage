@@ -1,6 +1,8 @@
 # petroheritage
 Generates a kml file based on data in a csv file. Aiming to generate a file to show the petrological heritage of a city. 
 
+**Repository under development. Not yet working!**
+
 ## How to use
 1. Place your pictures in the folder ```pics```.
 2. Complete the information in the file ```database.csv```.
