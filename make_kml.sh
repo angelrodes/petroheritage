@@ -1,11 +1,14 @@
 #!/bin/bash
 
-# Input CSV file
+# Input CSV file if provided
 if [ $# -eq 0 ]; then
     input_file="database.csv"
     else
     input_file=$1
 fi
+
+# Pictures address
+pics_address="https://raw.githubusercontent.com/angelrodes/petroheritage/91c43a09db7d667f02a9936cb505986ed9b114da/pics/"
 
 # Output KML file
 output_file="sites.kml"
