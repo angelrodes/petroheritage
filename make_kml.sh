@@ -1,13 +1,11 @@
 #!/bin/bash
 
-# Check if input file is provided
-if [ $# -eq 0 ]; then
-    echo "Usage: $0 <input_csv_file>"
-    exit 1
-fi
-
 # Input CSV file
-input_file=$1
+if [ $# -eq 0 ]; then
+    input_file="database.csv"
+    else
+    input_file=$1
+fi
 
 # Output KML file
 output_file="sites.kml"
