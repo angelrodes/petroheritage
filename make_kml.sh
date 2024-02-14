@@ -6,9 +6,11 @@ if [ $# -eq 0 ]; then
     else
     input_file=$1
 fi
+echo "Input file: $input_file"
 
 # Pictures address
-pics_address="https://raw.githubusercontent.com/angelrodes/petroheritage/91c43a09db7d667f02a9936cb505986ed9b114da/pics/"
+pics_address="https://raw.githubusercontent.com/angelrodes/petroheritage/main/pics/"
+icons_address="https://raw.githubusercontent.com/angelrodes/petroheritage/main/icons/"
 
 # Output KML file
 output_file="sites.kml"
@@ -21,22 +23,37 @@ cat <<EOF > $output_file
 EOF
 
 # Read CSV file
-tail -n +2 "$input_file" | while IFS=, read -r archivo latitud longitud fecha_de_la_fotografía tipo_de_roca clasificación formación_litológica latitud_origen longitud_origen tipo_de_uso; do
+name=0
+tail -n +2 "$input_file" | while IFS=, read -r archivo latitud longitud  fecha_de_la_foto tipo_de_roca clasificacion formacion_litologica latitud_origen longitud_origen tipo_de_uso; do
+    
+    ((name++))
     picture_file=$(echo "pics/$archivo")
-    # Check if picture file exists
-    if [ ! -f "$picture_file" ]; then
-        echo "Picture file '$picture_file' not found for site '$name'. Skipping."
-        continue
+     description=$(echo "$tipo_de_uso: $tipo_de_roca ($clasificacion) - <a href=\"https://www.google.com/maps?q=$latitud_origen,$longitud_origen\">$formacion_litologica</a>")
+     picture_address=$(echo "$pics_address$archivo")
+     if [[ "${clasificacion:0:1}" == [Ii] ]]; then
+         # Ignea
+         icon_address=$(echo "${icons_address}rock_r.png")
+    elif [[ "${clasificacion:0:1}" == [Ss] ]]; then
+         # Sedimentaria
+         icon_address=$(echo "${icons_address}rock_g.png")
+     elif [[ "${clasificacion:0:1}" == [Mm] ]]; then
+         # Metamorfica
+         icon_address=$(echo "${icons_address}rock_b.png")
+    else
+         icon_address=$(echo "${icons_address}rock_w.png")
     fi
 
-     description=$(echo "$tipo_de_uso: $tipo_de_roca ($clasificación) - $formación_litológica")
-     icon_address=$(echo "pics_address$archivo")
-
-    # Create KML placemark with picture
+    # Create KML placemark 
     cat <<EOF >> $output_file
     <Placemark>
         <name>$name</name>
-        <description>$description</description>
+        <description>
+        <![CDATA[
+        <img src="$picture_address" alt="$tipo_de_roca" width="300">
+        <p>$description</p>
+        ]]>
+        </description>
+        
         <Point>
             <coordinates>$longitud,$latitud</coordinates>
         </Point>
