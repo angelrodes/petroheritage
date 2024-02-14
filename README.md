@@ -8,4 +8,4 @@ Generates a map with images and description of sites based on data in a csv file
 2. Complete the information in the file ```database.csv```.
 3. Run ```make_oomap.sh``` to generate the map in the ```map.html``` file.
 
-[Example output](https://htmlpreview.github.io/?https://github.com/angelrodes/petroheritage/blob/main/map.html)
+[Example output](https://raw.githack.com/angelrodes/petroheritage/main/map.html)
