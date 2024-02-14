@@ -1,3 +1,4 @@
 archivo,latitud,longitud,fecha_de_la_fotografía,tipo_de_roca,clasificación,formación_litológica,latitud_origen,longitud_origen,tipo_de_uso
-ejemplo1.jpeg,42.876900,-8.544200,12/02/2024,Basalto,Ignea,Unidad IA 1,65.000000,-19.000000,Mobiliario urbano
-ejemplo2.jpeg,42.876900,-8.544200,12/02/2024,Marmol,Metamórfica,Unidad IA 2,44.100000,10.100000,Pared
+ejemplo1.jpeg, 42.886194, -8.541364,12/02/2024,Basalto,Ignea,Unidad IA 1,65.000000,-19.000000,Mobiliario urbano
+ejemplo2.jpeg,42.896141,-8.532796,12/02/2024,Marmol,Metamórfica,Unidad IA 2,44.100000,10.100000,Pared
+angel.jpg,42.887405, -8.535609,14/02/2024,Cenutrio,Sedimentario,Una terraza del Yangtze,29.084185,106.097076,Pavimento
