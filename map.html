@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patrimonio petrológico</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=15">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+    <div id="map" style="height: 600px;"></div>
+
+    <script>
+        var map = L.map('map').setView([42.878753, -8.541904], 12); // Initial center and zoom level
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+    // Include your custom icon images
+    var iIcon = L.icon({
+      iconUrl: 'https://raw.githubusercontent.com/angelrodes/petroheritage/main/icons/rock_r.png',
+      iconSize: [32, 32], // size of the icon
+      iconAnchor: [16, 32], // point of the icon which will correspond to marker's location
+      popupAnchor: [0, -32] // point from which the popup should open relative to the iconAnchor
+    });
+    var mIcon = L.icon({
+      iconUrl: 'https://raw.githubusercontent.com/angelrodes/petroheritage/main/icons/rock_b.png',
+      iconSize: [32, 32], // size of the icon
+      iconAnchor: [16, 32], // point of the icon which will correspond to marker's location
+      popupAnchor: [0, -32] // point from which the popup should open relative to the iconAnchor
+    });
+    var sIcon = L.icon({
+      iconUrl: 'https://raw.githubusercontent.com/angelrodes/petroheritage/main/icons/rock_g.png',
+      iconSize: [32, 32], // size of the icon
+      iconAnchor: [16, 32], // point of the icon which will correspond to marker's location
+      popupAnchor: [0, -32] // point from which the popup should open relative to the iconAnchor
+    });
+    var defaultIcon = L.icon({
+      iconUrl: 'https://raw.githubusercontent.com/angelrodes/petroheritage/main/icons/rock_w.png',
+      iconSize: [32, 32], // size of the icon
+      iconAnchor: [16, 32], // point of the icon which will correspond to marker's location
+      popupAnchor: [0, -32] // point from which the popup should open relative to the iconAnchor
+    });
+        L.marker([ 42.886194,  -8.541364], {icon: iIcon}).addTo(map).bindPopup('<h3>Basalto</h3><p>Mobiliario urbano: Basalto (Ignea) - <a href="https://www.openstreetmap.org/?lat=65.000000&lon=-19.000000&zoom=15&layers=M">Unidad IA 1</a></p><img src="https://raw.githubusercontent.com/angelrodes/petroheritage/main/pics/ejemplo1.jpeg" alt="1" width="200">');
+        L.marker([42.896141, -8.532796], {icon: mIcon}).addTo(map).bindPopup('<h3>Marmol</h3><p>Pared: Marmol (Metamórfica) - <a href="https://www.openstreetmap.org/?lat=44.100000&lon=10.100000&zoom=15&layers=M">Unidad IA 2</a></p><img src="https://raw.githubusercontent.com/angelrodes/petroheritage/main/pics/ejemplo2.jpeg" alt="2" width="200">');
+        L.marker([42.887405,  -8.535609], {icon: sIcon}).addTo(map).bindPopup('<h3>Cenutrio</h3><p>Pavimento: Cenutrio (Sedimentario) - <a href="https://www.openstreetmap.org/?lat=29.084185&lon=106.097076&zoom=15&layers=M">Una terraza del Yangtze</a></p><img src="https://raw.githubusercontent.com/angelrodes/petroheritage/main/pics/angel.jpg" alt="3" width="200">');
+        L.marker([42.878056,  -8.542222], {icon: iIcon}).addTo(map).bindPopup('<h3>Granito</h3><p> Sillares facultad: Granito (Ignea) - <a href="https://www.openstreetmap.org/?lat=42.878056&lon= -8.542222&zoom=15&layers=M">Local</a></p><img src="https://raw.githubusercontent.com/angelrodes/petroheritage/main/pics/facultad.png" alt="4" width="200">');
+    </script>
+</body>
+</html>
