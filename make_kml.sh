@@ -21,12 +21,16 @@ cat <<EOF > $output_file
 EOF
 
 # Read CSV file
-tail -n +2 "$input_file" | while IFS=, read -r name latitude longitude description picture_file; do
+tail -n +2 "$input_file" | while IFS=, read -r archivo latitud longitud fecha_de_la_fotografía tipo_de_roca clasificación formación_litológica latitud_origen longitud_origen tipo_de_uso; do
+    picture_file=$(echo "pics/$archivo")
     # Check if picture file exists
     if [ ! -f "$picture_file" ]; then
         echo "Picture file '$picture_file' not found for site '$name'. Skipping."
         continue
     fi
+
+     description=$(echo "$tipo_de_uso: $tipo_de_roca ($clasificación) - $formación_litológica")
+     icon_address=$(echo "pics_address$archivo")
 
     # Create KML placemark with picture
     cat <<EOF >> $output_file
@@ -34,12 +38,12 @@ tail -n +2 "$input_file" | while IFS=, read -r name latitude longitude descripti
         <name>$name</name>
         <description>$description</description>
         <Point>
-            <coordinates>$longitude,$latitude</coordinates>
+            <coordinates>$longitud,$latitud</coordinates>
         </Point>
         <Style>
             <IconStyle>
                 <Icon>
-                    <href>$picture_file</href>
+                    <href>$icon_address</href>
                 </Icon>
             </IconStyle>
         </Style>
