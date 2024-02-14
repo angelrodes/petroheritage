@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+    <Placemark>
+        <name>1</name>
+        <description>
+        <![CDATA[
+        <img src="https://raw.githubusercontent.com/angelrodes/petroheritage/main/pics/ejemplo1.jpeg" alt="Basalto" width="300">
+        <p>Mobiliario urbano: Basalto (Ignea) - <a href="https://www.google.com/maps?q=65.000000,-19.000000">Unidad IA 1</a></p>
+        ]]>
+        </description>
+        
+        <Point>
+            <coordinates> -8.541364, 42.886194</coordinates>
+        </Point>
+        <Style>
+            <IconStyle>
+                <Icon>
+                    <href>https://raw.githubusercontent.com/angelrodes/petroheritage/main/icons/rock_r.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+    </Placemark>
+    <Placemark>
+        <name>2</name>
+        <description>
+        <![CDATA[
+        <img src="https://raw.githubusercontent.com/angelrodes/petroheritage/main/pics/ejemplo2.jpeg" alt="Marmol" width="300">
+        <p>Pared: Marmol (Metamórfica) - <a href="https://www.google.com/maps?q=44.100000,10.100000">Unidad IA 2</a></p>
+        ]]>
+        </description>
+        
+        <Point>
+            <coordinates>-8.532796,42.896141</coordinates>
+        </Point>
+        <Style>
+            <IconStyle>
+                <Icon>
+                    <href>https://raw.githubusercontent.com/angelrodes/petroheritage/main/icons/rock_b.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+    </Placemark>
+    <Placemark>
+        <name>3</name>
+        <description>
+        <![CDATA[
+        <img src="https://raw.githubusercontent.com/angelrodes/petroheritage/main/pics/angel.jpg" alt="Cenutrio" width="300">
+        <p>Pavimento: Cenutrio (Sedimentario) - <a href="https://www.google.com/maps?q=29.084185,106.097076">Una terraza del Yangtze</a></p>
+        ]]>
+        </description>
+        
+        <Point>
+            <coordinates> -8.535609,42.887405</coordinates>
+        </Point>
+        <Style>
+            <IconStyle>
+                <Icon>
+                    <href>https://raw.githubusercontent.com/angelrodes/petroheritage/main/icons/rock_g.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+    </Placemark>
+</Document>
+</kml>
